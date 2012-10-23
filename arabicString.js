@@ -20,7 +20,7 @@ String.prototype.howArabic = function () {
 		
 	match = str.match(/[\u0621-\u0652]/gm) || []
 
-  result =  match.length / str.length
+	result =  match.length / str.length
 		
 	return result;
 }
