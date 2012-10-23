@@ -12,16 +12,16 @@
  */
 
 String.prototype.howArabic = function () {
-	
+
 	var result, match, str = this
-	
+
 	// strip punctuation, digits and spaces
 	str = str.replace(/[\u0021-\u0040\s]/gm, '')
-		
+
 	match = str.match(/[\u0621-\u0652]/gm) || []
 
 	result =  match.length / str.length
-		
+
 	return result;
 }
 
@@ -41,9 +41,9 @@ String.prototype.howArabic = function () {
  */
 	
 String.prototype.isArabic = function (threshold) {
-			
-	threshold = threshold || 0.79
 	
+	threshold = threshold || 0.79
+
 	return this.howArabic() >= threshold;
 }
 
