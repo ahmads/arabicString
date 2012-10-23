@@ -1,0 +1,18 @@
+{
+  "name": "arabicString",
+  "version": "0.0.1",
+  "description": "A Javascript library that extends the native String object with methods to help when dealing with Arabic strings for node and the browser.",
+  "main": "arabicString.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": "",
+  "keywords": [
+    "arabic",
+    "string",
+    "language",
+    "rtl"
+  ],
+  "author": "Ahmad Salman",
+  "license": "MIT"
+}
