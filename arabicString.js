@@ -25,39 +25,6 @@ String.prototype.howArabic = function () {
 	return result;
 }
 
-/**
- * The percentage of non-Arabic letters in the `String`.
- *
- * Example:
- *
- *		'فوو bar'.howNotArabic()
- *		//=> 0.5
- *
- *		'فوو bar'.howNotArabic()
- *		//=> 0.5
- *
- * 		'باز نورف'.howNotArabic()
- *		//=> 0.0
- *
- *
- * @returns {Float}
- * @api public
- */
-
-String.prototype.howNotArabic = function () {
-
-	var result, match, str = this
-
-	// strip arabic letters , digits and spaces
-	str = str.replace(!(/[\u0021-\u0040\s]/gm, ''))
-
-	match = str.match(/[\u0621-\u0652]/gm) || []
-
-	result =  match.length / str.length
-
-	return result;
-}
-
 
 /**
  * Is the `String` Arabic, based on
