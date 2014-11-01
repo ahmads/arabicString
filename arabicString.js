@@ -124,3 +124,5 @@ String.prototype.removeTashkel = function () {
 
 	return this.replace(/[\u064B-\u0652]/gm, '');
 }
+
+
