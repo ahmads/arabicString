@@ -3,8 +3,14 @@
  *
  * Example:
  *
+ * 		'foobar'.howArabic()
+ *		//=> 0.0
+ *
  *		'فوو bar'.howArabic()
  *		//=> 0.5
+ *
+ * 		'فوبار'.howArabic()
+ *		//=> 1.0
  *
  *
  * @returns {Float}
@@ -20,6 +26,38 @@ String.prototype.howArabic = function () {
 
 	match = str.match(/[\u0621-\u0652]/gm) || []
 
+	result =  match.length / str.length
+
+	return result;
+}
+
+/**
+ * The percentage of non-Arabic letters in the `String`.
+ *
+ * Example:
+ *
+ * 		'فوبار'.howNotArabic()
+ *		//=> 0.0
+ *
+ *		'فوو bar'.howNotArabic()
+ *		//=> 0.5
+ *
+ * 		'foobar'.howNotArabic()
+ *		//=> 1.0
+ *
+ *
+ * @returns {Float}
+ */
+
+String.prototype.howNotArabic = function () {
+
+	var result, match, str = this
+
+	// strip punctuation, digits and spaces
+	str = str.replace(/[\u0021-\u0040\s]/gm, '')
+
+	match = str.match(/[^\u0621-\u0652]/gm) || []
+	
 	result =  match.length / str.length
 
 	return result;
@@ -65,4 +103,24 @@ String.prototype.isArabic = function (threshold) {
 String.prototype.hasArabic = function () {
 
   return /[\u0621-\u064A]/.test(this);
+}
+
+/**
+ * Remove the Arabic tashkil -diacritics- from the 'String'.
+ *
+ * Example
+ *
+ *		'مٌحمْد'.removeTashkel()
+ *		//=> 'محمد'
+ *
+ *		'وَتُرى الْكَوَاكِبِ فِي الْمَجَرَّةِ شَرَعَا*** مِثْلُ الظِّباءِ كوارعا فِي جَدْوَلِ'.removeTashkel()
+ *		//=> 'وترى الكواكب في المجرة شرعا *** مثل الظباء كوارعا في جدول'
+ *
+ *
+ * @returns {String}
+ */
+ 
+String.prototype.removeTashkel = function () {
+
+	return this.replace(/[\u064B-\u0652]/gm, '');
 }
