@@ -19,10 +19,32 @@ The percentage of Arabic letters in the `String`.
 ### Example
 
 ```js
+'foobar'.howArabic()
+//=> 0.0
+
 'فوو bar'.howArabic()
 //=> 0.5
+
+'فوبار'.howArabic()
+//=> 1.0
 ```
 
+##String#howNotArabic()
+
+The precentage of non-Arabic letters in the 'String'.
+
+### Example
+
+```js
+'فوبار'.howNotArabic()
+//=> 0.0
+
+'فوو bar'.howNotArabic()
+//=> 0.5
+
+'foobar'.howNotArabic()
+//=> 1.0
+```
 
 ##String#isArabic(threshold)
 
@@ -48,6 +70,20 @@ Does the `String` have _any_ Arabic letter.
 //=> ture
 'foo bar'.hasArabic()
 //=> false
+```
+
+##String#removeTashkel()
+
+Will return the 'String' without the diacritics
+
+### Example
+
+```js
+'مٌحمْد'.removeTashkel()
+//=> 'محمد'
+
+'وَتُرى الْكَوَاكِبِ فِي الْمَجَرَّةِ شَرَعَا*** مِثْلُ الظِّباءِ كوارعا فِي جَدْوَلِ'.removeTashkel()
+//=> 'وترى الكواكب في المجرة شرعا *** مثل الظباء كوارعا في جدول'
 ```
 
 ## License 
