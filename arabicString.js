@@ -125,4 +125,38 @@ String.prototype.removeTashkel = function () {
 	return this.replace(/[\u064B-\u0652]/gm, '');
 }
 
+/**
+ * Remove non-Arabic letters
+ *
+ * Example
+ *
+ *		'hello مرحبا'.removeNonArabic()
+ *		//=> 'مرحبا'
+ *
+ *
+ *
+ * @returns {String}
+ */
+ 
+String.prototype.removeNonArabic = function () {
 
+	return this.replace(/[^\u0621-\u0652]/gm, '');
+}
+
+/**
+ * Remove Arabic letters
+ *
+ * Example
+ *
+ *		'hello مرحبا'.removeTashkel()
+ *		//=> 'hello'
+ *
+ *
+ *
+ * @returns {String}
+ */
+ 
+String.prototype.removeArabic = function () {
+
+	return this.replace(/[\u0621-\u0652]/gm, '');
+}
