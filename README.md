@@ -29,7 +29,7 @@ The percentage of Arabic letters in the `String`.
 
 ##String#howNotArabic()
 
-The precentage of non-Arabic letters in the `String`.
+The percentage of non-Arabic letters in the `String`.
 
 ### Example
 
@@ -52,7 +52,7 @@ Is the `String` Arabic, based on a given `threshold` between `0` and `1`. Defaul
 'فوو'.isArabic()
 //=> true
 'فوو bar baz'.isArabic(0.5)
-//=> flase
+//=> false
 ```
 
 ##String#hasArabic()
@@ -70,7 +70,7 @@ Does the `String` have _any_ Arabic letter.
 
 ##String#removeTashkel()
 
-Will return the `String` without the diacritics
+Will return the `String` without the diacritics.
 
 ### Example
 
