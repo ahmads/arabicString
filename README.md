@@ -88,7 +88,7 @@ Will return the `String` without the diacritics.
 ### Example
 
 ```js
-'مــرــحــبــا'.removeTatwel()
+'مــرحــبــا'.removeTatwel()
 //=> 'مرحبا'
 ```
 
