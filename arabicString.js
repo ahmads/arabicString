@@ -160,3 +160,20 @@ String.prototype.removeArabic = function () {
 
 	return this.replace(/[\u0621-\u0652]/gm, '');
 }
+
+/**
+ * Remove Tatwel letters
+ *
+ * Example
+ *
+ *		'مــرحــبــا'.removeTatwel()
+ *		//=> 'مرحبا'
+ *
+ *
+ *
+ * @returns {String}
+ */
+
+String.prototype.removeTatwel = function() {
+	return this.replace(/\u0640/g, '');
+}
