@@ -166,7 +166,7 @@ String.prototype.removeArabic = function () {
  *
  * Example
  *
- *		'مــرــحــبــا'.removeTatwel()
+ *		'مــرحــبــا'.removeTatwel()
  *		//=> 'مرحبا'
  *
  *
